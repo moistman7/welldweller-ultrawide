@@ -39,8 +39,8 @@ Tested on the Steam build v.9.30.2026 with screenshots at each resolution (main 
 **Supported:** 16:9 and wider. **Not supported yet:** narrower than 16:9 (for example 16:10). Fixing it needs a change to the patched executable code; it is planned for a later version.
 
 ## Known quirks
-- **Resolution is saved by the game, not the patch.** If you switch resolution in Options and then quit, the game keeps that choice. To return to your native size, set it again in Options > Graphics > Resolution, or edit `res_width` / `res_height` in `%LOCALAPPDATA%\WellDweller\Settings.sav` while the game is closed (back up the file first).
-- The Resolution row steps through the modes your display offers in an order that is not sorted by size, so check the value shown before pressing Enter to apply it.
+- **The game saves the last resolution you applied** (the patch doesn't change this). If it ends up at the wrong size, close the game and run `Set_Resolution.cmd`: it sets the saved resolution to your display's native size, backs up `Settings.sav` first, and refuses to run while the game is open. For a specific size: `Set_Resolution.cmd 1920 1080`. It is optional and separate from the patch, so it is not covered by `SHA256SUMS.txt`.
+- The in-game Resolution row steps through your display's modes in an order that is not sorted by size, so check the value shown before pressing Enter. This is the game's own list; the patch does not reorder it.
 
 If you test another resolution, please [open an issue](../../issues) with the resolution, what you checked (HUD edges, lighting, dialogue, artwork, mouse selection) and screenshots.
 
