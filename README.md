@@ -38,7 +38,7 @@ Tested on the Steam build v.9.30.2026 by driving the running game and reading sc
 | **v2.1** saved-resolution restore on launch (21:9 and 2560x1600) | Verified in game (select, leave Options, exit, relaunch) |
 | v2.1 on a native 3440x1440 monitor | Not yet re-checked (v2.1 testing used a 1920x1080 display) |
 | 1920x1200, 2560x1600 (16:10) | **Known issue:** gameplay looks correct, but the pause darkening does not reach the top and bottom edges, leaving lighter bands |
-| Dialogue, nest scene, mouse selection | Not yet tested |
+| Dialogue, cutscenes, mouse selection | Not yet tested |
 
 **Supported:** 16:9 and wider. **Not supported yet:** narrower than 16:9 (for example 16:10). Fixing it needs another change to the patched executable code.
 
