@@ -20,11 +20,13 @@ Reordering labels without the other three desynchronises the menu text from the 
 - Editing `Settings.sav` outside the game triggers a Steam Cloud conflict prompt.
 - Native 3440x1440 was verified on a 3440x1440 display (Graphics menu shows 3440x1440, full width).
 
-## Known issue / v2.2 candidate
-- At 16:10 and narrower, the pause-darkening overlay is sized for 1440 logical height and leaves a gap; the main-menu light beam is also cut off at the top.
+## 16:10 fixes / v2.2 candidate
+- v2.2 expands full-screen darkening vertically and preserves paused-background proportions. Verified at 1920x1200 fullscreen; main-menu light beam remains outside this fix.
 
 ## Testing
 Launch via `steam://rungameid/3699590`, send scancode `keybd_event` input, capture the client area. Static analysis was done with an Iced (.NET) disassembler.
 
 ## Linux / Steam Deck
 `WellDweller_Patch_Linux.sh` applies the same patch table and appended section as the PowerShell installer (generated from it) using only bash, dd, base64 and sha256sum. It was tested against the original exe and produces the identical v2.1 hash. Run it from the game folder, or pass the folder as an argument. Under Proton the game folder is usually `~/.local/share/Steam/steamapps/common/Well Dweller`.
+
+Vertical delta = (max(1440,2560*h/w)-1440)/2. Cave 144791200 stores delta as float at 144793068. Rectangle matched-path hook 144790224 ->144791300 expands top/bottom. Sprite hook 144790634 ->144791900 adjusts cave-entry [rsp+28h] Y and [rsp+38h] Yscale; CALL return address must be included. 16:10 delta=80; Yscale multiplier=1+delta/720. Constants720f/1f at144793070/74. All new bytes are in .uwfix. Baseline and candidate tests used a temporary P pause binding, restored afterward.

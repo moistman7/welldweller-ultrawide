@@ -1,3 +1,14 @@
+2.2 candidate
+- Fix 16:10 pause/Options bright bands with adaptive full-height darkening.
+- Preserve paused-background proportions by correcting its vertical scale and
+  position using the active aspect ratio.
+- Vertical corrections are zero at 16:9 and wider.
+- Windows and experimental Linux patchers produce the same executable.
+
+Validation: fullscreen 1920x1200 pause and Options verified visually and
+confirmed by the user. 16:9/21:9 visual regression and Deck confirmation of
+this version remain pending. Main-menu light-beam behavior is unchanged.
+
 2.1 candidate
 - Sort the resolution list ascending: 3440x1440 (the relabelled 2560x1440 slot)
   moves from before 2560x1600 to after it.

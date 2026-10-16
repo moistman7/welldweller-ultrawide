@@ -1,7 +1,8 @@
+<!-- v2.2: fixes pause/Options bands and vertical background compression at 16:10; tested at 1920x1200 fullscreen. -->
 # Well Dweller – Adaptive Aspect Patch
 
 Ultrawide / adaptive-aspect patch for **Well Dweller** (Windows Steam build v.9.30.2026).
-**Version 2.1 candidate – experimental, not an official game update.**
+**Version 2.2 candidate – experimental, not an official game update.**
 
 **[Download the latest release](../../releases/latest)**
 
@@ -36,14 +37,14 @@ Tested on the Steam build v.9.30.2026 by driving the running game and reading sc
 | 1920x1080 (16:9) gameplay and pause darkening | Verified in v2.0 |
 | **v2.1** resolution list is sorted; each entry applies the size it is labelled with | Verified in game (every swapped entry, plus 3840x2160 and 4096x2160 by position) |
 | **v2.1** saved-resolution restore on launch (21:9 and 2560x1600) | Verified in game (select, leave Options, exit, relaunch) |
-| v2.1 on a native 3440x1440 monitor | Not yet re-checked (v2.1 testing used a 1920x1080 display) |
-| 1920x1200, 2560x1600 (16:10) | **Known issue:** gameplay looks correct, but the pause darkening does not reach the top and bottom edges, leaving lighter bands |
+| v2.1 on a native 3440x1440 monitor | Verified in the prior session; v2.2 visual regression pending |
+| 1920x1200 (16:10) pause and Options | Verified in v2.2: full-height darkening; paused scene keeps gameplay proportions |
 | Dialogue, cutscenes, mouse selection | Not yet tested |
 
-**Supported:** 16:9 and wider. **Not supported yet:** narrower than 16:9 (for example 16:10). Fixing it needs another change to the patched executable code.
+**16:10:** pause and Options fixes verified at 1920x1200 fullscreen. 2560x1600, Steam Deck v2.2, and narrower ratios still need confirmation.
 
 ## Linux / Steam Deck (experimental)
-`WellDweller_Patch_Linux.sh` applies the same patch under Proton. Put it in the game folder (`~/.local/share/Steam/steamapps/common/Well Dweller`) and run `bash WellDweller_Patch_Linux.sh` from Desktop mode. It was verified to produce the identical patched exe (same SHA256) as the Windows installer, but has **not** been run on a real Steam Deck yet. The Deck screen is 16:10, so the pause-darkening known issue applies. Reports welcome.
+`WellDweller_Patch_Linux.sh` applies the same patch under Proton. Put it in the game folder (`~/.local/share/Steam/steamapps/common/Well Dweller`) and run `bash WellDweller_Patch_Linux.sh` from Desktop mode. It was verified to produce the identical patched exe (same SHA256) as the Windows installer, The user confirmed v2.1 runs on Steam Deck; the new v2.2 16:10 fixes still need Deck confirmation.
 
 ## Known quirks
 - **The game saves the last resolution you applied** (the patch doesn't change this). If it ends up at the wrong size, close the game and run `Set_Resolution.cmd`: it sets the saved resolution to your display's native size, backs up `Settings.sav` first, and refuses to run while the game is open. For a specific size: `Set_Resolution.cmd 1920 1080`. It is optional and separate from the patch, so it is not covered by `SHA256SUMS.txt`. Note: the game stores its 3440x1440 entry as `2560x1440` in `Settings.sav`; the helper writes that for you.

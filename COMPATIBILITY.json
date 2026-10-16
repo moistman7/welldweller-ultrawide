@@ -1,8 +1,8 @@
 {
-  "version": "2.1 candidate",
-  "platform": "Windows Steam",
-  "original_executable_sha256": "dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2",
-  "patched_executable_sha256": "353de2d97a41310b72cea4f9ffb4902a7f2a14f4f48b33695d331969fba72203",
-  "frame_rate_unlocked": false,
-  "visual_verification": "resolution list order, entry-to-size mapping and saved-size restore checked in game on a 1920x1080 display; native 3440x1440 check pending; 16:10 pause-darkening gap known"
+    "version":  "2.2 candidate",
+    "platform":  "Windows Steam",
+    "original_executable_sha256":  "dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2",
+    "patched_executable_sha256":  "6cffda64da7f0178d0ce3f39bcf4e5694e64523344103bd2466b42e4df8d2c48",
+    "frame_rate_unlocked":  false,
+    "visual_verification":  "Fullscreen 1920x1200 pause and Options: full-height darkening and background proportions verified visually and confirmed by user. 16:9/21:9 visual regression and Steam Deck v2.2 confirmation pending."
 }
