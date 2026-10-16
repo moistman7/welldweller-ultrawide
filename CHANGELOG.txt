@@ -1,3 +1,19 @@
+2.1 candidate
+- Sort the resolution list ascending: 3440x1440 (the relabelled 2560x1440 slot)
+  moves from before 2560x1600 to after it.
+- Move the matching index everywhere it is used so labels, sizes and saved
+  settings stay in agreement: the list labels (two copies), the starting-entry
+  lookup, the index-to-size table and the saved-size-to-index lookup.
+- No change to window sizes, framing or the original frame rate.
+
+Validation: installer tests (fresh install, upgrade from v2.0, repeat apply,
+restore, unsupported-file refusal); in-game checks that each swapped entry
+applies the size it is labelled with, and that saved 2560x1440 (21:9) and
+2560x1600 settings restore to the right entry on launch. Checked on a
+1920x1080 display only; a native 3440x1440 check is still pending.
+
+Known issue (unchanged): 16:10 and narrower outputs leave lighter bands at the
+top and bottom of the pause darkening.
 2.0 candidate
 - Replace fixed 3440x1440 assumptions with runtime aspect calculations.
 - Refresh camera view size when resolution changes without a zoom change.

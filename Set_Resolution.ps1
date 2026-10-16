@@ -20,6 +20,8 @@ try {
         $b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
         $Width = $b.Width; $Height = $b.Height
     }
+    # The patched game stores its 3440x1440 entry as 2560x1440 in Settings.sav.
+    if ($Width -eq 3440 -and $Height -eq 1440) { $Width = 2560 }
     if ($Width -lt 640 -or $Height -lt 480 -or $Width -gt 16384 -or $Height -gt 16384) {
         throw "Unreasonable size ${Width}x${Height}. Nothing changed."
     }

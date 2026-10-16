@@ -1,5 +1,5 @@
 WELL DWELLER - ADAPTIVE ASPECT PATCH
-Version 2.0 candidate | Windows Steam build v.9.30.2026
+Version 2.1 candidate | Windows Steam build v.9.30.2026
 
 INSTALL
 1. Close Well Dweller.
@@ -22,6 +22,8 @@ WHAT IT DOES
 - Extends lighting/darkening effects across the wider view.
 - Corrects narrow-room centring and opening nest dialogue placement.
 - Keeps the nest camera steady when speakers change.
+- Lists the resolutions in ascending order (3440x1440 now sits between 2560x1600
+  and 3840x2160) and keeps every entry matched to its real size.
 
 Change resolution in-game without reapplying the patch. It uses the
 render dimensions the game provides; it does not add every display mode
@@ -53,6 +55,6 @@ package preserves the original frame rate.
 COMPATIBILITY
 Only the exact supported Steam executable (71,230,976 original bytes):
 SHA256 dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2
-Accepts original or known previous patch builds v1 through v1.9.
+Accepts original or known previous patch builds v1 through v1.9 and v2.0.
 No game executable, assets, saves or personal files are included.
 This patch is not affiliated with the game's developer or publisher.

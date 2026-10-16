@@ -1,4 +1,4 @@
-# Well Dweller Adaptive Aspect Patch v2.0 candidate.
+# Well Dweller Adaptive Aspect Patch v2.1 candidate.
 $ErrorActionPreference = 'Stop'
 $dir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $exe = Join-Path $dir 'WellDweller.exe'
@@ -14,7 +14,8 @@ $v16 = 'c6551797206f27e9ac35372fd9dd70cffb3953003479f3030e20301b45577789'
 $v17 = '15fd08b4ef83405cf40ffd7260ca98d7e9b4eb20171bf8c5de54aa8a63e6e5d9'
 $v18 = '1ed1770e9367d9531f610b8b4362f6ba41d1092a9724732f3fcd07d76b9e9962'
 $v19 = '8aa7b24eac0264046c021c6f8ba4eecda09f8f28d4796e163ace7bb367b714f1'
-$done = '2e96d2a0b9dc1b2fab5905ee361648ad31acf0dc29fcfcffc0df107f8d029ec8'
+$v20 = '2e96d2a0b9dc1b2fab5905ee361648ad31acf0dc29fcfcffc0df107f8d029ec8'
+$done = '353de2d97a41310b72cea4f9ffb4902a7f2a14f4f48b33695d331969fba72203'
 function Get-Sha($p) { (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() }
 function Get-BytesSha([byte[]]$bytes) {
     $sha = [System.Security.Cryptography.SHA256]::Create()
@@ -29,14 +30,14 @@ function Convert-Hex($s) {
 $temp = $null
 try {
     $h = Get-Sha $exe
-    if ($h -eq $done) { Write-Host 'Already patched (v2.0 adaptive candidate).'; exit 0 }
-    if ($h -ne $want -and $h -ne $v1 -and $h -ne $v11 -and $h -ne $v12 -and $h -ne $v13 -and $h -ne $v14 -and $h -ne $v15 -and $h -ne $v16 -and $h -ne $v17 -and $h -ne $v18 -and $h -ne $v19) { throw "Unsupported executable ($h). Nothing changed." }
+    if ($h -eq $done) { Write-Host 'Already patched (v2.1 adaptive candidate).'; exit 0 }
+    if ($h -ne $want -and $h -ne $v1 -and $h -ne $v11 -and $h -ne $v12 -and $h -ne $v13 -and $h -ne $v14 -and $h -ne $v15 -and $h -ne $v16 -and $h -ne $v17 -and $h -ne $v18 -and $h -ne $v19 -and $h -ne $v20) { throw "Unsupported executable ($h). Nothing changed." }
     if (Test-Path -LiteralPath $bak) {
         if ((Get-Sha $bak) -ne $want) { throw 'Original backup hash mismatch. Nothing changed.' }
-    } elseif ($h -eq $v1 -or $h -eq $v11 -or $h -eq $v12 -or $h -eq $v13 -or $h -eq $v14 -or $h -eq $v15 -or $h -eq $v16 -or $h -eq $v17 -or $h -eq $v18 -or $h -eq $v19) { throw 'Upgrading v1 requires its verified original backup. Nothing changed.' }
+    } elseif ($h -eq $v1 -or $h -eq $v11 -or $h -eq $v12 -or $h -eq $v13 -or $h -eq $v14 -or $h -eq $v15 -or $h -eq $v16 -or $h -eq $v17 -or $h -eq $v18 -or $h -eq $v19 -or $h -eq $v20) { throw 'Upgrading v1 requires its verified original backup. Nothing changed.' }
     # Always construct from verified original bytes, even when upgrading v1.
     $source = $exe
-    if ($h -eq $v1 -or $h -eq $v11 -or $h -eq $v12 -or $h -eq $v13 -or $h -eq $v14 -or $h -eq $v15 -or $h -eq $v16 -or $h -eq $v17 -or $h -eq $v18 -or $h -eq $v19) { $source = $bak }
+    if ($h -eq $v1 -or $h -eq $v11 -or $h -eq $v12 -or $h -eq $v13 -or $h -eq $v14 -or $h -eq $v15 -or $h -eq $v16 -or $h -eq $v17 -or $h -eq $v18 -or $h -eq $v19 -or $h -eq $v20) { $source = $bak }
     $b = [System.IO.File]::ReadAllBytes($source)
     if ((Get-BytesSha $b) -ne $want) { throw 'Source changed while reading. Nothing changed.' }
     $patches = @(
@@ -101,7 +102,17 @@ try {
     @(49385077, "e8867b8701909090"),
     @(3066444, "26df03"),
     @(3066645, "00a4"),
-    @(47640657, "e9aa1ba20190")
+    @(47640657, "e9aa1ba20190"),
+    @(3088895, "60"),
+    @(3088907, "68"),
+    @(3093849, "60"),
+    @(3093861, "68"),
+    @(3066314, "da638d03"),
+    @(3066785, "fb618d03"),
+    @(38514230, "c62cd701"),
+    @(38514262, "c62dd701"),
+    @(3086860, "0a"),
+    @(3086908, "09")
     )
     foreach ($p in $patches) {
         $d = Convert-Hex $p[1]
@@ -121,7 +132,7 @@ try {
     [System.IO.File]::Replace($temp, $exe, [System.Management.Automation.Language.NullString]::Value)
     $temp = $null
     if ((Get-Sha $exe) -ne $done) { throw 'Post-install verification failed. Restore the verified original backup.' }
-    Write-Host 'Patched OK (v2.0 adaptive candidate). Original saved as WellDweller.exe.original.'
+    Write-Host 'Patched OK (v2.1 adaptive candidate). Original saved as WellDweller.exe.original.'
     Write-Host 'Adaptive aspect changes are experimental; check framing after changing resolution.'
     exit 0
 } catch {

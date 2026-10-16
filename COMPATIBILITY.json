@@ -1,8 +1,8 @@
 {
-  "version": "2.0 candidate",
+  "version": "2.1 candidate",
   "platform": "Windows Steam",
   "original_executable_sha256": "dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2",
-  "patched_executable_sha256": "2e96d2a0b9dc1b2fab5905ee361648ad31acf0dc29fcfcffc0df107f8d029ec8",
+  "patched_executable_sha256": "353de2d97a41310b72cea4f9ffb4902a7f2a14f4f48b33695d331969fba72203",
   "frame_rate_unlocked": false,
-  "visual_verification": "pending for automatic resolution switching"
+  "visual_verification": "resolution list order, entry-to-size mapping and saved-size restore checked in game on a 1920x1080 display; native 3440x1440 check pending; 16:10 pause-darkening gap known"
 }
