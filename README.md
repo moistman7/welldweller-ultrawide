@@ -42,6 +42,9 @@ Tested on the Steam build v.9.30.2026 by driving the running game and reading sc
 
 **Supported:** 16:9 and wider. **Not supported yet:** narrower than 16:9 (for example 16:10). Fixing it needs another change to the patched executable code.
 
+## Linux / Steam Deck (experimental)
+`WellDweller_Patch_Linux.sh` applies the same patch under Proton. Put it in the game folder (`~/.local/share/Steam/steamapps/common/Well Dweller`) and run `bash WellDweller_Patch_Linux.sh` from Desktop mode. It was verified to produce the identical patched exe (same SHA256) as the Windows installer, but has **not** been run on a real Steam Deck yet. The Deck screen is 16:10, so the pause-darkening known issue applies. Reports welcome.
+
 ## Known quirks
 - **The game saves the last resolution you applied** (the patch doesn't change this). If it ends up at the wrong size, close the game and run `Set_Resolution.cmd`: it sets the saved resolution to your display's native size, backs up `Settings.sav` first, and refuses to run while the game is open. For a specific size: `Set_Resolution.cmd 1920 1080`. It is optional and separate from the patch, so it is not covered by `SHA256SUMS.txt`. Note: the game stores its 3440x1440 entry as `2560x1440` in `Settings.sav`; the helper writes that for you.
 - Steam may show a *Cloud Conflict* prompt after Settings.sav is edited outside the game; pick whichever copy you want to keep.

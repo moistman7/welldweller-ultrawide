@@ -29,6 +29,15 @@ Change resolution in-game without reapplying the patch. It uses the
 render dimensions the game provides; it does not add every display mode
 to the game's resolution list. The existing 3440x1440 entry is retained.
 
+LINUX / STEAM DECK (EXPERIMENTAL, UNTESTED ON REAL HARDWARE)
+Copy WellDweller_Patch_Linux.sh into the game folder (Desktop mode,
+~/.local/share/Steam/steamapps/common/Well Dweller), open a terminal there and run:
+  bash WellDweller_Patch_Linux.sh
+It produces the identical patched exe as the Windows installer (same hash
+checks and WellDweller.exe.original backup). To undo, copy the backup over
+WellDweller.exe or use Steam's Verify integrity of game files. 16:10 screens
+(such as the Deck) still have the pause-darkening known issue.
+
 RESTORE
 Close the game and double-click Restore_Original.cmd. This restores the
 verified backup. Steam's Verify integrity of game files can also restore

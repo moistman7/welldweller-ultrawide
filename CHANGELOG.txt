@@ -26,3 +26,5 @@ top and bottom of the pause darkening.
 Validation: 972 adaptive instruction-emulation cases, 9640 centring cases,
 and fresh install, prior-version upgrade, repeat apply, restore and
 unsupported-file refusal tests. Native gameplay visual checks pending.
+
+v2.1 addition: WellDweller_Patch_Linux.sh (experimental Linux/Steam Deck installer; same patched result as the Windows installer, untested on real hardware).
