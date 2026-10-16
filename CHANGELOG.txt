@@ -20,7 +20,7 @@ top and bottom of the pause darkening.
 - Calculate HUD gutters and menu projection from the same active width.
 - Reserve effect coverage across switches and refresh cached vignette
   placement when the logical view width changes.
-- Preserve v1.9 nest camera, dialogue and full-width darkening fixes.
+- Preserve v1.9 cutscene camera, dialogue and full-width darkening fixes.
 - Keep the original frame rate.
 
 Validation: 972 adaptive instruction-emulation cases, 9640 centring cases,

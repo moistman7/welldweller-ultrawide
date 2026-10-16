@@ -17,7 +17,7 @@ Full details are in [README.txt](README.txt) and [CHANGELOG.txt](CHANGELOG.txt).
 ## What it does
 - Adapts camera width and HUD edges to the active render size
 - Extends lighting/darkening effects across the wider view
-- Fixes narrow-room centring and nest dialogue placement
+- Fixes narrow-room centring and opening cutscene dialogue placement
 - Sorts the in-game resolution list (3440x1440 now sits between 2560x1600 and 3840x2160) with every entry matched to its real size
 - Does **not** unlock the frame rate
 

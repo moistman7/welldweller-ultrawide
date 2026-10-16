@@ -20,8 +20,8 @@ WHAT IT DOES
 - Adapts camera width and HUD edge positions to the active render size.
 - Preserves menu/story proportions and captured Options backgrounds.
 - Extends lighting/darkening effects across the wider view.
-- Corrects narrow-room centring and opening nest dialogue placement.
-- Keeps the nest camera steady when speakers change.
+- Corrects narrow-room centring and opening cutscene dialogue placement.
+- Keeps the camera steady in cutscenes when speakers change.
 - Lists the resolutions in ascending order (3440x1440 now sits between 2560x1600
   and 3840x2160) and keeps every entry matched to its real size.
 
