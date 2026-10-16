@@ -1,0 +1,12 @@
+2.0 candidate
+- Replace fixed 3440x1440 assumptions with runtime aspect calculations.
+- Refresh camera view size when resolution changes without a zoom change.
+- Calculate HUD gutters and menu projection from the same active width.
+- Reserve effect coverage across switches and refresh cached vignette
+  placement when the logical view width changes.
+- Preserve v1.9 nest camera, dialogue and full-width darkening fixes.
+- Keep the original frame rate.
+
+Validation: 972 adaptive instruction-emulation cases, 9640 centring cases,
+and fresh install, prior-version upgrade, repeat apply, restore and
+unsupported-file refusal tests. Native gameplay visual checks pending.

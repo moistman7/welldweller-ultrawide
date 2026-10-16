@@ -1,0 +1,8 @@
+{
+  "version": "2.0 candidate",
+  "platform": "Windows Steam",
+  "original_executable_sha256": "dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2",
+  "patched_executable_sha256": "2e96d2a0b9dc1b2fab5905ee361648ad31acf0dc29fcfcffc0df107f8d029ec8",
+  "frame_rate_unlocked": false,
+  "visual_verification": "pending for automatic resolution switching"
+}
