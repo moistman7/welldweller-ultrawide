@@ -25,3 +25,6 @@ Reordering labels without the other three desynchronises the menu text from the 
 
 ## Testing
 Launch via `steam://rungameid/3699590`, send scancode `keybd_event` input, capture the client area. Static analysis was done with an Iced (.NET) disassembler.
+
+## Linux / Steam Deck
+`WellDweller_Patch_Linux.sh` applies the same patch table and appended section as the PowerShell installer (generated from it) using only bash, dd, base64 and sha256sum. It was tested against the original exe and produces the identical v2.1 hash. Run it from the game folder, or pass the folder as an argument. Under Proton the game folder is usually `~/.local/share/Steam/steamapps/common/Well Dweller`.
