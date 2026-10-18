@@ -2,7 +2,7 @@
 # Well Dweller – Adaptive Aspect Patch
 
 Ultrawide / adaptive-aspect patch for **Well Dweller** (Windows Steam build v.9.30.2026).
-**Version 2.2 candidate – experimental, not an official game update.**
+**Version 2.2.1 candidate – experimental, not an official game update.**
 
 **[Download the latest release](../../releases/latest)**
 
@@ -47,7 +47,7 @@ Tested on the Steam build v.9.30.2026 by driving the running game and reading sc
 `WellDweller_Patch_Linux.sh` applies the same patch under Proton. Put it in the game folder (`~/.local/share/Steam/steamapps/common/Well Dweller`) and run `bash WellDweller_Patch_Linux.sh` from Desktop mode. It was verified to produce the identical patched exe (same SHA256) as the Windows installer, The user confirmed v2.1 runs on Steam Deck; the new v2.2 16:10 fixes still need Deck confirmation.
 
 ## Known quirks
-- **The game saves the last resolution you applied** (the patch doesn't change this). If it ends up at the wrong size, close the game and run `Set_Resolution.cmd`: it sets the saved resolution to your display's native size, backs up `Settings.sav` first, and refuses to run while the game is open. For a specific size: `Set_Resolution.cmd 1920 1080`. It is optional and separate from the patch, so it is not covered by `SHA256SUMS.txt`. Note: the game stores its 3440x1440 entry as `2560x1440` in `Settings.sav`; the helper writes that for you.
+- **The game saves the last resolution you applied** (the patch doesn't change this). If it ends up at the wrong size, close the game and run `Set_Resolution.cmd`: it sets the saved resolution to your display's native size, backs up `Settings.sav` first, and refuses to run while the game is open. For a specific size: `Set_Resolution.cmd 1920 1080`. It is optional and separate from the patch, so it is not covered by `SHA256SUMS.txt`. The saved size is the real size (3440x1440 is stored as 3440x1440); saving 2560 on a 3440x1440 display gives black bars on the sides.
 - Steam may show a *Cloud Conflict* prompt after Settings.sav is edited outside the game; pick whichever copy you want to keep.
 - The patch relabels the game's 2560x1440 entry as 3440x1440, so a 2560x1440 (16:9) monitor has no native entry.
 If you test another resolution, please [open an issue](../../issues) with the resolution, what you checked (HUD edges, lighting, dialogue, artwork, mouse selection) and screenshots.

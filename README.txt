@@ -1,5 +1,5 @@
 WELL DWELLER - ADAPTIVE ASPECT PATCH
-Version 2.2 candidate | Windows Steam build v.9.30.2026
+Version 2.2.1 candidate | Windows Steam build v.9.30.2026
 
 INSTALL
 1. Close Well Dweller.

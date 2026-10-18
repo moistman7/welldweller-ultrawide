@@ -16,7 +16,7 @@ How the patch is structured, for anyone extending it. Addresses are virtual addr
 Reordering labels without the other three desynchronises the menu text from the applied size.
 
 ## Behaviour to know
-- `Settings.sav` is JSON with `res_width` / `res_height`. The 21:9 entry is stored as 2560x1440 and is written when leaving Options.
+- `Settings.sav` is JSON with `res_width` / `res_height`, stored at the real size (3440x1440 is saved as 3440x1440). Saving 2560x1440 on a 3440x1440 display renders a 2560-wide picture with black side bars. Written when leaving Options.
 - Editing `Settings.sav` outside the game triggers a Steam Cloud conflict prompt.
 - Native 3440x1440 was verified on a 3440x1440 display (Graphics menu shows 3440x1440, full width).
 

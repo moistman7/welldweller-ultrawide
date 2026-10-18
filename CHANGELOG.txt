@@ -1,3 +1,9 @@
+2.2.1 candidate
+- Fix Set_Resolution: it no longer converts 3440x1440 to 2560x1440. That conversion
+  dated from the old resolution list and caused black side bars on 3440x1440
+  displays. If you already ran it, close the game and run Set_Resolution.cmd again.
+- Patched executable is unchanged from 2.2 (same SHA256).
+
 2.2 candidate
 - Fix 16:10 pause/Options bright bands with adaptive full-height darkening.
 - Preserve paused-background proportions by correcting its vertical scale and

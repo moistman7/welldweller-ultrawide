@@ -1,5 +1,5 @@
 {
-    "version":  "2.2 candidate",
+    "version":  "2.2.1 candidate",
     "platform":  "Windows Steam",
     "original_executable_sha256":  "dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2",
     "patched_executable_sha256":  "6cffda64da7f0178d0ce3f39bcf4e5694e64523344103bd2466b42e4df8d2c48",
